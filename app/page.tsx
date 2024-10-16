@@ -1,10 +1,30 @@
+"use client";
+
+import useUserLocation from "./hooks/useUserLocation";
 import styles from "./page.module.css";
-import { getWeather } from "./services/weather/getWeather";
+import useGetWeather from "./hooks/useGetWeather";
 
-export default async function Home() {
-  const weatherData = await getWeather();
+export default function Home() {
+  const { location, error: userLocationError } = useUserLocation();
 
-  console.log(weatherData);
+  const {
+    weatherData,
+    isLoading: isWeatherLoading,
+    error: weatherError,
+  } = useGetWeather(location?.latitude || null, location?.longitude || null);
 
-  return <div className={styles.page}></div>;
+  if (isWeatherLoading) {
+    return <p>isWeatherLoading</p>;
+  }
+
+  if (weatherError) {
+    return <p>weatherError: {weatherError}</p>;
+  }
+
+  return (
+    <div className={styles.page}>
+      <h1>Response</h1>
+      <pre>{JSON.stringify(weatherData, null, 2)}</pre>
+    </div>
+  );
 }
