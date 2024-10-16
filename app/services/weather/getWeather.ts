@@ -2,11 +2,13 @@ export async function getWeather(latitude: number, longitude: number) {
   const queryParams = new URLSearchParams({
     key: `${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`,
     q: `${latitude},${longitude}`,
-    days: "5",
+    days: "6",
   });
 
   let response = await fetch(
-    `https://api.weatherapi.com/v1/forecast.json?${queryParams.toString()}`
+    `${
+      process.env.NEXT_PUBLIC_WEATHER_BASE_API_URL
+    }/forecast.json?${queryParams.toString()}`
   );
 
   if (!response.ok) {
