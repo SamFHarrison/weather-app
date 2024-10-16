@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Weather } from "../types/weather";
+import { Location } from "../types/location";
 import { getWeather } from "../services/weather/getWeather";
+import useUserLocation from "./useUserLocation";
 
 interface UseWeatherReturn {
   weatherData: Weather | null;
@@ -8,13 +10,20 @@ interface UseWeatherReturn {
   error: string | null;
 }
 
-const useGetWeather = (
-  latitude: number | null,
-  longitude: number | null
-): UseWeatherReturn => {
+const useGetWeather = (searchedLocation: Location | null): UseWeatherReturn => {
   const [weatherData, setWeatherData] = useState<Weather | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+
+  const { location: userLocation, error: userLocationError } =
+    useUserLocation();
+
+  const latitude = searchedLocation
+    ? searchedLocation.lat
+    : userLocation?.latitude;
+  const longitude = searchedLocation
+    ? searchedLocation.lon
+    : userLocation?.longitude;
 
   useEffect(() => {
     if (latitude && longitude) {
