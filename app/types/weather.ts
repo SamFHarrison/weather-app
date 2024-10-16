@@ -1,18 +1,24 @@
 export interface Weather {
-  location: Location;
+  location: {
+    name: string;
+    region: string;
+    country: string;
+    lat: number;
+    lon: number;
+    tz_id: string;
+    localtime_epoch: number;
+    localtime: string;
+  };
   current: Current;
-  forecast: Forecast;
+  forecast: {
+    forecastday: Forecastday[];
+  };
 }
 
-export interface Location {
-  name: string;
-  region: string;
-  country: string;
-  lat: number;
-  lon: number;
-  tz_id: string;
-  localtime_epoch: number;
-  localtime: string;
+export interface Condition {
+  text: string;
+  icon: string;
+  code: number;
 }
 
 export interface Current {
@@ -45,16 +51,6 @@ export interface Current {
   uv: number;
   gust_mph: number;
   gust_kph: number;
-}
-
-export interface Condition {
-  text: string;
-  icon: string;
-  code: number;
-}
-
-export interface Forecast {
-  forecastday: Forecastday[];
 }
 
 export interface Forecastday {
