@@ -12,8 +12,7 @@
   .search-bar {
     display: inherit;
     align-items: center;
-    padding: 8px 16px;
-    gap: 16px;
+    padding: 0 0 0 16px;
 
     svg {
       min-width: 20px;
@@ -22,8 +21,10 @@
 
     .input {
       background-color: transparent;
-      height: 100%;
+      height: 36px;
+      width: 100%;
       border: none;
+      padding-left: 16px;
 
       &:focus {
         outline: none;
@@ -33,7 +34,11 @@
 
   .dropdown-list {
     position: relative;
-    padding: 8px 0 0;
+    margin: 8px 0 0;
+    border-radius: 16px;
+
+    max-height: 250px;
+    overflow-y: scroll;
 
     .list-item > button {
       background: transparent;
