@@ -8,6 +8,9 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 
 - Extract duplicate types e.g. Error, isLoading etc.
 - Refactor `<ComboBox />` to be more generic and re-usable.
+- Decide and implement an appropriate stale time on `getWeather` cache.
+- Create a error listener that dynamically displays error notications.
+- Refactor how `searchedLocations` is reset `onSelect`
 
 ## Running the app
 

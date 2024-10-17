@@ -30,6 +30,7 @@ export default function Home() {
 
   const handleSelectLocation = (location: Location) => {
     setSearchedLocation(location);
+    searchLocations("");
   };
 
   if (isWeatherLoading) {
@@ -49,8 +50,6 @@ export default function Home() {
         onSelect={handleSelectLocation}
         options={searchResults}
       />
-      {/* <h1>Response</h1>
-      <pre>{JSON.stringify(weatherData, null, 2)}</pre> */}
     </div>
   );
 }

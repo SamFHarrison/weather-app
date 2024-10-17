@@ -1,5 +1,5 @@
 import { Location } from "@/app/types/location";
-import styles from "./ComboBox.module.css";
+import styles from "./combobox.module.css";
 
 interface ComboBoxProps {
   options: Location[];
@@ -13,7 +13,7 @@ const ComboBox = ({ options, onChange, onSelect }: ComboBoxProps) => {
   };
 
   return (
-    <div className={styles.ComboBox}>
+    <div className={styles.combobox}>
       <input
         type="text"
         onChange={handleInputChange}

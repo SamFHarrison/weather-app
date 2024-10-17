@@ -15,7 +15,9 @@ const useSearchLocation = (): UseSearchLocationReturn => {
   const [error, setError] = useState<string | null>(null);
 
   const searchLocations = (query: string) => {
-    if (!query) return;
+    if (!query) {
+      setSearchResults([]);
+    }
 
     setIsLoading(true);
     setError(null);
