@@ -1,5 +1,5 @@
 import { Location } from "@/app/types/location";
-import styles from "./combobox.module.css";
+import "./ComboBox.css";
 
 interface ComboBoxProps {
   options: Location[];
@@ -13,15 +13,15 @@ const ComboBox = ({ options, onChange, onSelect }: ComboBoxProps) => {
   };
 
   return (
-    <div className={styles.combobox}>
+    <div className="combobox">
       <input
         type="text"
         onChange={handleInputChange}
         placeholder="Search for a location..."
-        className={styles.input}
+        className="input"
       />
 
-      <ul className={styles.options}>
+      <ul>
         {options.map((result) => (
           <li
             key={result.id}

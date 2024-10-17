@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "./page.module.css";
 import useGetWeather from "./hooks/useGetWeather";
 import ComboBox from "./components/ComboBox/ComboBox";
 import useSearchLocation from "./hooks/useLocationSearch";
@@ -44,7 +43,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.page}>
+    <div className="page">
       <ComboBox
         onChange={searchLocations}
         onSelect={handleSelectLocation}
