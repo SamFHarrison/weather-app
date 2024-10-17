@@ -21,15 +21,15 @@ const useUserLocation = (): UseUserLocationReturn => {
           const { latitude, longitude } = position.coords;
           setUserLocation({ latitude, longitude });
         },
-        (err: GeolocationPositionError) => {
-          switch (err.code) {
-            case err.PERMISSION_DENIED:
+        (error: GeolocationPositionError) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
               throw new Error("User denied the request for Geolocation.");
               break;
-            case err.POSITION_UNAVAILABLE:
+            case error.POSITION_UNAVAILABLE:
               throw new Error("Location information is unavailable.");
               break;
-            case err.TIMEOUT:
+            case error.TIMEOUT:
               throw new Error("The request to get user location timed out.");
               break;
             default:

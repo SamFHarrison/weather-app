@@ -32,8 +32,8 @@ const useGetWeather = (searchedLocation: Location | null): UseWeatherReturn => {
           setWeatherData(data);
           setIsLoading(false);
         })
-        .catch((err) => {
-          setError(err.message);
+        .catch((error) => {
+          setError(error.message);
           setIsLoading(false);
         });
     }

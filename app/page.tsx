@@ -19,8 +19,8 @@ export default function Home() {
 
   const {
     searchResults,
-    isLoading: searchLoading,
-    error: searchError,
+    // isLoading: searchLoading,
+    // error: searchError,
     searchLocations,
   } = useSearchLocation();
 

@@ -4,7 +4,7 @@ export async function getLocations(query: string) {
     q: `${query}`,
   });
 
-  let response = await fetch(
+  const response = await fetch(
     `${
       process.env.NEXT_PUBLIC_WEATHER_BASE_API_URL
     }/search.json?${queryParams.toString()}`

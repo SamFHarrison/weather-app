@@ -5,7 +5,7 @@ export async function getWeather(latitude: number, longitude: number) {
     days: "6",
   });
 
-  let response = await fetch(
+  const response = await fetch(
     `${
       process.env.NEXT_PUBLIC_WEATHER_BASE_API_URL
     }/forecast.json?${queryParams.toString()}`
