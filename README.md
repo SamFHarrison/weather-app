@@ -10,7 +10,10 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Refactor `<ComboBox />` to be more generic and re-usable.
 - Decide and implement an appropriate stale time on `getWeather` cache.
 - Create a error listener that dynamically displays error notications.
-- Refactor how `searchedLocations` is reset `onSelect`
+- Refactor how `searchedLocations` is reset `onSelect`.
+- Design system
+  - Create root css variables for spacing.
+  - Create utility classes for typography.
 
 ## Running the app
 
