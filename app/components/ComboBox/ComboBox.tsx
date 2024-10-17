@@ -27,7 +27,6 @@ const ComboBox = ({ options, onChange, onSelect }: ComboBoxProps) => {
             key={result.id}
             onClick={() => {
               onSelect(result);
-              //   console.log(result);
             }}
           >
             {result.name}, {result.region}, {result.country}
