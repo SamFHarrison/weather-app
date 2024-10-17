@@ -15,8 +15,7 @@ const useGetWeather = (searchedLocation: Location | null): UseWeatherReturn => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const { location: userLocation, error: userLocationError } =
-    useUserLocation();
+  const { userLocation } = useUserLocation();
 
   const latitude = searchedLocation
     ? searchedLocation.lat
