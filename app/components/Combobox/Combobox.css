@@ -6,7 +6,8 @@
   width: 300px;
 
   .search-bar {
-    background-color: var(--surface-background-dark-secondary);
+    background-color: var(--surface-background-blue);
+    border: 1px solid var(--surface-background-white-25);
     display: inherit;
     border-radius: 24px;
     align-items: center;
@@ -37,14 +38,13 @@
   position: absolute;
   left: 0;
   top: 52px;
-  background-color: var(--surface-background-dark-secondary);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background-color: var(--surface-background-blue);
   padding: 8px 0 8px 8px;
   width: 100%;
   margin: 8px 0 0;
   border-radius: 16px;
   z-index: 9999;
+  border: 1px solid var(--surface-background-white-25);
 
   max-height: 250px;
   overflow-y: scroll;
@@ -59,7 +59,7 @@
     width: 100%;
 
     &:hover {
-      background-color: var(--surface-background-dark-secondary);
+      background-color: var(--surface-background-gray-50);
     }
 
     span {
@@ -75,12 +75,6 @@
     }
   }
 }
-
-/* .combobox,
-.dropdown-list {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-} */
 
 @media (max-width: 425px) {
   .combobox {

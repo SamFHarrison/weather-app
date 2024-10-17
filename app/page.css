@@ -6,9 +6,44 @@
   gap: 8px;
 }
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 64px;
+
+  .location-wrapper {
+    display: flex;
+    gap: 16px;
+  }
+
+  .temperature-info {
+    display: flex;
+    gap: 64px;
+
+    .temperature {
+      font-size: 128px;
+      font-weight: 500;
+      letter-spacing: -6px;
+      line-height: 100%;
+    }
+
+    .badge-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+}
+
 @media (max-width: 425px) {
   .header {
-    margin: 64px 16px;
+    margin: 16px;
     flex-direction: column-reverse;
+  }
+
+  .location-wrapper {
+    margin: 16px;
   }
 }

@@ -1,0 +1,19 @@
+.badge {
+  display: flex;
+  width: 100px;
+  height: 40px;
+  background-color: var(--surface-background-blue);
+  border: 1px solid var(--surface-background-white-25);
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px 8px 12px;
+  border-radius: 18px;
+
+  dt {
+    font-weight: 100;
+  }
+
+  dd {
+    font-weight: 300;
+  }
+}

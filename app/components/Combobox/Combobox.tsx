@@ -1,7 +1,7 @@
 import { Location } from "@/app/types/location";
 import "./Combobox.css";
 
-interface ComboboxProps {
+export interface ComboboxProps {
   options: Location[];
   onChange: (query: string) => void;
   onSelect: (location: Location) => void;

@@ -2,10 +2,12 @@
   --font-primary: #ffffff;
   --font-placeholder: rgba(255, 255, 255, 0.5);
 
-  --surface-background-dark-primary: rgba(34, 34, 34, 0.5);
-  --surface-background-dark-secondary: rgba(34, 34, 34, 0.25);
-  --surface-background-light-primary: rgba(255, 255, 255, 0.5);
-  --surface-background-light-secondary: rgba(255, 255, 255, 0.25);
+  --surface-background-gray-50: rgba(34, 34, 34, 0.5);
+  --surface-background-white-50: rgba(255, 255, 255, 0.5);
+  --surface-background-white-25: rgba(255, 255, 255, 0.25);
+  --surface-background-blue: rgb(8, 57, 119);
+
+  --surface-border-focus: rgb(197, 176, 16);
 }
 
 html,
@@ -40,7 +42,7 @@ body {
 }
 
 *:focus {
-  outline: 2px solid rgb(197, 176, 16);
+  outline: 2px solid var(--surface-border-focus);
   outline-offset: -2px;
 }
 
@@ -75,9 +77,9 @@ li {
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--surface-background-light-secondary);
+  background: var(--surface-background-white-25);
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--surface-background-light-primary);
+  background: var(--surface-background-white-50);
 }

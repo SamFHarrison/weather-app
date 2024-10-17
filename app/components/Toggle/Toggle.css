@@ -1,6 +1,7 @@
 .toggle-container {
   display: flex;
-  background-color: var(--surface-background-dark-secondary);
+  background-color: var(--surface-background-blue);
+  border: 1px solid var(--surface-background-white-25);
   border-radius: 26px;
   padding: 4px;
   height: 52px;
@@ -15,11 +16,11 @@
     width: 64px;
 
     &:hover {
-      background-color: var(--surface-background-dark-secondary);
+      background-color: var(--surface-background-blue);
     }
 
     &.active {
-      background-color: var(--surface-background-dark-primary);
+      background-color: var(--surface-background-gray-50);
     }
   }
 }
