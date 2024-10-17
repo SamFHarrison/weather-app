@@ -1,13 +1,13 @@
 import { Location } from "@/app/types/location";
 import "./combobox.css";
 
-interface ComboBoxProps {
+interface ComboboxProps {
   options: Location[];
   onChange: (query: string) => void;
   onSelect: (location: Location) => void;
 }
 
-const combobox = ({ options, onChange, onSelect }: ComboBoxProps) => {
+const combobox = ({ options, onChange, onSelect }: ComboboxProps) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };

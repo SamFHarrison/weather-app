@@ -1,7 +1,7 @@
 "use client";
 
 import useGetWeather from "./hooks/useGetWeather";
-import ComboBox from "./components/Combobox/Combobox";
+import Combobox from "./components/Combobox/Combobox";
 import useSearchLocation from "./hooks/useLocationSearch";
 import { Location } from "./types/location";
 import { useState } from "react";
@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <div className="page">
-      <ComboBox
+      <Combobox
         onChange={searchLocations}
         onSelect={handleSelectLocation}
         options={searchResults}
