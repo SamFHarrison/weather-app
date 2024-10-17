@@ -17,6 +17,7 @@ const useSearchLocation = (): UseSearchLocationReturn => {
   const searchLocations = (query: string) => {
     if (!query) {
       setSearchResults([]);
+      return;
     }
 
     setIsLoading(true);
