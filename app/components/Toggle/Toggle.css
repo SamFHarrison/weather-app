@@ -1,0 +1,35 @@
+.toggle-container {
+  display: flex;
+  background-color: var(--surface-background-dark-secondary);
+  border-radius: 26px;
+  padding: 4px;
+  height: 52px;
+  width: max-content;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  .toggle-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 22px;
+    width: 64px;
+
+    &:hover {
+      background-color: var(--surface-background-dark-secondary);
+    }
+
+    &.active {
+      background-color: var(--surface-background-dark-primary);
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .toggle-container {
+    width: 100%;
+
+    .toggle-button {
+      width: 100%;
+    }
+  }
+}

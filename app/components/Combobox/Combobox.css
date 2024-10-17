@@ -1,18 +1,18 @@
 .combobox {
-  background-color: var(--surface-background);
   display: flex;
   flex-direction: column;
   width: max-content;
-  border-radius: 24px;
-  padding: 8px;
   position: relative;
   width: 300px;
-  backdrop-filter: blur(10px);
 
   .search-bar {
+    background-color: var(--surface-background-dark-secondary);
     display: inherit;
+    border-radius: 24px;
     align-items: center;
-    padding: 0 0 0 16px;
+    padding: 8px 16px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 
     svg {
       min-width: 20px;
@@ -31,46 +31,59 @@
       }
     }
   }
+}
 
-  .dropdown-list {
-    position: relative;
-    margin: 8px 0 0;
-    border-radius: 16px;
+.dropdown-list {
+  position: absolute;
+  left: 0;
+  top: 52px;
+  background-color: var(--surface-background-dark-secondary);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 8px 0 8px 8px;
+  width: 100%;
+  margin: 8px 0 0;
+  border-radius: 16px;
+  z-index: 9999;
 
-    max-height: 250px;
-    overflow-y: scroll;
+  max-height: 250px;
+  overflow-y: scroll;
 
-    .list-item > button {
-      background: transparent;
-      border: none;
-      display: flex;
-      flex-direction: column;
-      padding: 16px;
-      border-radius: 16px;
+  .list-item > button {
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+    width: 100%;
+
+    &:hover {
+      background-color: var(--surface-background-dark-secondary);
+    }
+
+    span {
+      text-align: left;
       width: 100%;
-
-      &:hover {
-        background-color: var(--surface-background);
-      }
-
-      span {
-        text-align: left;
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .country {
-        font-size: 12px;
-        font-weight: 300;
-      }
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .country {
+      font-size: 12px;
+      font-weight: 300;
     }
   }
 }
 
+/* .combobox,
+.dropdown-list {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+} */
+
 @media (max-width: 425px) {
   .combobox {
-    width: calc(100vw - 32px);
-    margin: auto;
+    width: 100%;
   }
 }

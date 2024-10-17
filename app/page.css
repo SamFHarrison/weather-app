@@ -1,0 +1,14 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 64px;
+  gap: 8px;
+}
+
+@media (max-width: 425px) {
+  .header {
+    margin: 64px 16px;
+    flex-direction: column-reverse;
+  }
+}

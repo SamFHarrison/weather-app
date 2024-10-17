@@ -2,7 +2,8 @@
   --font-primary: #ffffff;
   --font-placeholder: rgba(255, 255, 255, 0.5);
 
-  --surface-background: rgba(34, 34, 34, 0.25);
+  --surface-background-dark-primary: rgba(34, 34, 34, 0.5);
+  --surface-background-dark-secondary: rgba(34, 34, 34, 0.25);
   --surface-background-light-primary: rgba(255, 255, 255, 0.5);
   --surface-background-light-secondary: rgba(255, 255, 255, 0.25);
 }
@@ -14,7 +15,10 @@ body {
 }
 
 body {
-  color: var(--foreground);
+  color: var(--font-primary);
+
+  height: 100dvh;
+
   background-image: url(./assets/images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,14 +27,16 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  color: var(--font-primary);
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+*:hover {
+  transition: background-color 0.18s ease;
 }
 
 *:focus {
@@ -54,6 +60,7 @@ button {
 
 input::placeholder {
   color: var(--font-placeholder);
+  font-weight: 300;
 }
 
 li {
@@ -62,7 +69,6 @@ li {
 
 ::-webkit-scrollbar {
   width: 5px;
-  margin-left: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;

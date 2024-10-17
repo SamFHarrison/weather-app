@@ -1,10 +1,12 @@
 "use client";
 
 import Combobox from "./components/Combobox/Combobox";
+import Toggle from "./components/Toggle/Toggle";
 import useGetWeather from "./hooks/useGetWeather";
 import useSearchLocation from "./hooks/useLocationSearch";
 import { Location } from "./types/location";
 import { useState } from "react";
+import "./page.css";
 
 export default function Home() {
   const [searchedLocation, setSearchedLocation] = useState<Location | null>(
@@ -44,11 +46,14 @@ export default function Home() {
 
   return (
     <div className="page">
-      <Combobox
-        onChange={searchLocations}
-        onSelect={handleSelectLocation}
-        options={searchResults}
-      />
+      <div className="header">
+        <Combobox
+          onChange={searchLocations}
+          onSelect={handleSelectLocation}
+          options={searchResults}
+        />
+        <Toggle onToggle={() => {}} options={["°C", "°F"]} />
+      </div>
     </div>
   );
 }
