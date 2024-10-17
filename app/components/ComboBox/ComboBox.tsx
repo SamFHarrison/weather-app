@@ -12,8 +12,15 @@ const Combobox = ({ options, onChange, onSelect }: ComboboxProps) => {
     onChange(event.target.value);
   };
 
+  const isExpanded = options.length > 0;
+
   return (
-    <div className="combobox" role="combobox">
+    <div
+      className="combobox"
+      role="combobox"
+      aria-expanded={isExpanded}
+      aria-controls="dropdown-list"
+    >
       <div className="search-bar">
         <svg
           width="20"
@@ -33,11 +40,12 @@ const Combobox = ({ options, onChange, onSelect }: ComboboxProps) => {
           onChange={handleInputChange}
           placeholder="Search..."
           className="input"
+          aria-label="Search locations"
         />
       </div>
 
-      {options.length > 0 && (
-        <ul className="dropdown-list">
+      {isExpanded && (
+        <ul className="dropdown-list" id="dropdown-list">
           {options.map((result) => (
             <li className="list-item" key={result.id}>
               <button
