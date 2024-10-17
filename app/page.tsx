@@ -1,7 +1,7 @@
 "use client";
 
-import useGetWeather from "./hooks/useGetWeather";
 import Combobox from "./components/Combobox/Combobox";
+import useGetWeather from "./hooks/useGetWeather";
 import useSearchLocation from "./hooks/useLocationSearch";
 import { Location } from "./types/location";
 import { useState } from "react";
