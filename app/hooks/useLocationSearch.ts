@@ -6,7 +6,7 @@ interface UseSearchLocationReturn {
   searchResults: Location[];
   isLoading: boolean;
   error: string | null;
-  searchLocations: (query: string) => void;
+  searchLocations: (query?: string) => void;
 }
 
 const useSearchLocation = (): UseSearchLocationReturn => {
@@ -14,7 +14,7 @@ const useSearchLocation = (): UseSearchLocationReturn => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const searchLocations = (query: string) => {
+  const searchLocations = (query?: string) => {
     if (!query) {
       setSearchResults([]);
       return;

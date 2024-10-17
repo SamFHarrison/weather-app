@@ -29,7 +29,7 @@ export default function Home() {
 
   const handleSelectLocation = (location: Location) => {
     setSearchedLocation(location);
-    searchLocations("");
+    searchLocations();
   };
 
   if (isWeatherLoading) {
