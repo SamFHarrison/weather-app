@@ -3,6 +3,8 @@
   --font-placeholder: rgba(255, 255, 255, 0.5);
 
   --surface-background: rgba(34, 34, 34, 0.25);
+  --surface-background-light-primary: rgba(255, 255, 255, 0.5);
+  --surface-background-light-secondary: rgba(255, 255, 255, 0.25);
 }
 
 html,
@@ -31,6 +33,11 @@ body {
   margin: 0;
 }
 
+*:focus {
+  outline: 2px solid rgb(197, 176, 16);
+  outline-offset: -2px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -46,9 +53,25 @@ button {
 }
 
 input::placeholder {
-  color: var(--font-placeholder) !important;
+  color: var(--font-placeholder);
 }
 
 li {
   list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  margin-left: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-background-light-secondary);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-background-light-primary);
 }
