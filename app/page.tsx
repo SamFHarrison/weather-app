@@ -49,6 +49,7 @@ export default function Home() {
         onSelect={handleSelectLocation}
         options={searchResults}
       />
+      <h1>Response</h1>
     </div>
   );
 }
