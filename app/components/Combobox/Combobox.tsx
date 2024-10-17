@@ -1,5 +1,5 @@
 import { Location } from "@/app/types/location";
-import "./combobox.css";
+import "./Combobox.css";
 
 interface ComboboxProps {
   options: Location[];
