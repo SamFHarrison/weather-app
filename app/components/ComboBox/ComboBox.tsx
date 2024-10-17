@@ -7,7 +7,7 @@ interface ComboboxProps {
   onSelect: (location: Location) => void;
 }
 
-const combobox = ({ options, onChange, onSelect }: ComboboxProps) => {
+const Combobox = ({ options, onChange, onSelect }: ComboboxProps) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -60,4 +60,4 @@ const combobox = ({ options, onChange, onSelect }: ComboboxProps) => {
   );
 };
 
-export default combobox;
+export default Combobox;
