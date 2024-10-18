@@ -20,6 +20,8 @@ body {
   color: var(--font-primary);
 
   height: 100dvh;
+  max-width: 1000px;
+  margin: auto;
 
   background-image: url(./assets/images/background.png);
   background-repeat: no-repeat;

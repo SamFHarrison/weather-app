@@ -13,6 +13,7 @@ export default function Home() {
   const [searchedLocation, setSearchedLocation] = useState<Location | null>(
     null
   );
+  const [isCelcius, setIsCelcius] = useState(true);
 
   const {
     weatherData,
@@ -53,7 +54,11 @@ export default function Home() {
           onSelect={handleSelectLocation}
           options={searchResults}
         />
-        <Toggle onToggle={() => {}} options={["°C", "°F"]} />
+        <Toggle
+          onToggle={() => {
+            setIsCelcius(!isCelcius);
+          }}
+        />
       </div>
 
       {weatherData && (
@@ -75,22 +80,43 @@ export default function Home() {
             <p className="location">{`${weatherData?.location.name}, ${weatherData?.location.country}`}</p>
           </div>
 
-          <div className="temperature-info">
-            <div className="badge-wrapper">
-              <Badge
-                title="H"
-                value={weatherData?.forecast.forecastday[0].day.maxtemp_c}
-              />
-              <Badge
-                title="L"
-                value={weatherData?.forecast.forecastday[0].day.mintemp_c}
-              />
+          <section className="weather-info">
+            <div className="temperature-info">
+              <div className="badge-wrapper">
+                <Badge
+                  title="H"
+                  value={weatherData?.forecast.forecastday[0].day.maxtemp_c}
+                />
+
+                <Badge
+                  title="L"
+                  value={weatherData?.forecast.forecastday[0].day.mintemp_c}
+                />
+              </div>
+
+              <p className="temperature">
+                {`${
+                  isCelcius
+                    ? Math.round(weatherData?.current.temp_c)
+                    : Math.round(weatherData?.current.temp_f)
+                }`}
+                &deg;
+              </p>
             </div>
 
-            <p className="temperature">
-              {`${weatherData?.current.temp_c}`}&deg;
-            </p>
-          </div>
+            <dl className="more-info">
+              <dt>WIND SPEED</dt>
+              <dd>{weatherData.current.wind_mph}mph</dd>
+              <dt>WIND DIRECTION</dt>
+              <dd>{weatherData.current.wind_dir}</dd>
+              <dt>HUMIDITY</dt>
+              <dd>{weatherData.current.humidity}%</dd>
+              <dt>FEELS LIKE</dt>
+              <dd>{weatherData.current.feelslike_c}&deg;</dd>
+              <dt>VISIBILITY</dt>
+              <dd>{weatherData.current.vis_miles} miles</dd>
+            </dl>
+          </section>
         </div>
       )}
     </div>

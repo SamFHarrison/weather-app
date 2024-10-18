@@ -2,13 +2,16 @@ import { useState } from "react";
 import "./Toggle.css";
 
 interface ToggleProps {
-  options: string[];
+  // options: string[];
   defaultOption?: string;
   onToggle: (option: string) => void;
 }
 
-const Toggle = ({ options, defaultOption, onToggle }: ToggleProps) => {
+const Toggle = ({ defaultOption, onToggle }: ToggleProps) => {
+  const options = ["°C", "°F"];
+
   const [selectedOption, setSelectedOption] = useState<string>(
+    // TODO: find defaultOption in list of options
     defaultOption || options[0]
   );
 
