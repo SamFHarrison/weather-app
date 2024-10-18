@@ -8,29 +8,26 @@
   width: max-content;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
 
-  .toggle-button {
-    background-color: transparent;
-    border: none;
-    border-radius: 22px;
-    width: 64px;
-
-    &:hover {
-      background-color: var(--surface-background-blue);
-    }
-
-    &.active {
-      background-color: var(--surface-background-gray-50);
-    }
-  }
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 22px;
+  width: 64px;
+}
+.toggle-button:hover {
+  background-color: var(--surface-background-blue);
+}
+.toggle-button.active {
+  background-color: var(--surface-background-gray-50);
 }
 
 @media (max-width: 425px) {
   .toggle-container {
     width: 100%;
-
-    .toggle-button {
-      width: 100%;
-    }
+  }
+  .toggle-button {
+    width: 100%;
   }
 }

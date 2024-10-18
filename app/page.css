@@ -21,11 +21,13 @@
 .weather-info {
   display: flex;
   justify-content: space-between;
+  gap: 32px;
 }
 
 .temperature-info {
   display: flex;
   justify-content: space-between;
+  width: 350px;
   min-width: 350px;
 }
 
@@ -43,14 +45,14 @@
   gap: 16px;
 }
 
-dl.more-info {
+.more-info {
   display: flex;
   flex-flow: row wrap;
   max-width: 300px;
   align-items: baseline;
 }
 
-dt {
+.more-info-dt {
   flex-basis: 70%;
   padding: 2px 4px;
   text-align: left;
@@ -59,7 +61,7 @@ dt {
   letter-spacing: 0.7px;
 }
 
-dd {
+.more-info-dd {
   flex-basis: 20%;
   flex-grow: 1;
   margin: 0;
@@ -68,6 +70,19 @@ dd {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.4px;
+}
+
+@media (min-width: 425px) and (max-width: 750px) {
+  .hero {
+    align-items: center;
+  }
+  .weather-info {
+    flex-direction: column;
+    width: min-content;
+  }
+  .more-info {
+    max-width: none;
+  }
 }
 
 @media (max-width: 425px) {
@@ -79,25 +94,26 @@ dd {
   .hero {
     margin: 16px;
     align-items: center;
+  }
 
-    .location-wrapper {
-      margin: 16px;
-    }
+  .location-wrapper {
+    margin: 16px;
+  }
 
-    .weather-info {
-      flex-direction: column;
-      gap: 32px;
+  .weather-info {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
 
-      .temperature-info {
-        min-width: 0px;
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 16px;
+  .temperature-info {
+    min-width: 0px;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 16px;
+  }
 
-        .badge-wrapper {
-          flex-direction: row;
-        }
-      }
-    }
+  .badge-wrapper {
+    flex-direction: row;
   }
 }

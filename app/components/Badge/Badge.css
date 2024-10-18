@@ -8,12 +8,12 @@
   align-items: center;
   padding: 8px 8px 8px 12px;
   border-radius: 18px;
+}
 
-  dt {
-    font-weight: 100;
-  }
+.badge-dt {
+  font-weight: 100;
+}
 
-  dd {
-    font-weight: 300;
-  }
+.badge-dd {
+  font-weight: 300;
 }

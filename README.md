@@ -19,6 +19,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Fix the visual bug on the scroll bar in `<Combobox />`.
 - Create `<Icon />` component.
 - Extract `<DefinitionList />` component.
+- Dynamic favicon.
 
 ## Running the app
 

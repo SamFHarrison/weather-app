@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <div className="page">
-      <div className="header">
+      <header className="header">
         <Combobox
           onChange={searchLocations}
           onSelect={handleSelectLocation}
@@ -62,7 +62,7 @@ export default function Home() {
             setTempScale(selectedOption);
           }}
         />
-      </div>
+      </header>
 
       {weatherData && (
         <div className="hero">
@@ -108,21 +108,25 @@ export default function Home() {
             </div>
 
             <dl className="more-info">
-              <dt>WIND SPEED</dt>
-              <dd>{weatherData.current.wind_mph}mph</dd>
-              <dt>WIND DIRECTION</dt>
-              <dd>{weatherData.current.wind_dir}</dd>
-              <dt>HUMIDITY</dt>
-              <dd>{weatherData.current.humidity}%</dd>
-              <dt>FEELS LIKE</dt>
-              <dd>
+              <dt className="more-info-dt">WIND SPEED</dt>
+              <dd className="more-info-dd">
+                {weatherData.current.wind_mph}mph
+              </dd>
+              <dt className="more-info-dt">WIND DIRECTION</dt>
+              <dd className="more-info-dd">{weatherData.current.wind_dir}</dd>
+              <dt className="more-info-dt">HUMIDITY</dt>
+              <dd className="more-info-dd">{weatherData.current.humidity}%</dd>
+              <dt className="more-info-dt">FEELS LIKE</dt>
+              <dd className="more-info-dd">
                 {tempScale === "celsius"
                   ? Math.round(weatherData?.current.feelslike_c)
                   : Math.round(weatherData?.current.feelslike_f)}
                 &deg;
               </dd>
-              <dt>VISIBILITY</dt>
-              <dd>{weatherData.current.vis_miles} miles</dd>
+              <dt className="more-info-dt">VISIBILITY</dt>
+              <dd className="more-info-dd">
+                {weatherData.current.vis_miles} miles
+              </dd>
             </dl>
           </section>
         </div>

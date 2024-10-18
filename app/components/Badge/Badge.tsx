@@ -8,8 +8,8 @@ interface BadgeProps {
 const Badge = ({ title, value }: BadgeProps) => {
   return (
     <dl className="badge">
-      <dt>{title}</dt>
-      <dd>{value}&deg;</dd>
+      <dt className="badge-dt">{title}</dt>
+      <dd className="badge-dd">{value}&deg;</dd>
     </dl>
   );
 };
