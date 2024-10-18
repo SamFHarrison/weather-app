@@ -24,7 +24,7 @@
     .temperature-info {
       display: flex;
       justify-content: space-between;
-      min-width: 300px;
+      min-width: 350px;
 
       .temperature {
         font-size: 128px;
@@ -84,8 +84,19 @@
       margin: 16px;
     }
 
-    .temperature-info {
-      gap: 0;
+    .weather-info {
+      flex-direction: column;
+      gap: 32px;
+
+      .temperature-info {
+        min-width: 0px;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 16px;
+        .badge-wrapper {
+          flex-direction: row;
+        }
+      }
     }
   }
 }

@@ -1,34 +1,38 @@
 import { useState } from "react";
 import "./Toggle.css";
 
-interface ToggleProps {
-  // options: string[];
-  defaultOption?: string;
-  onToggle: (option: string) => void;
+export interface ToggleProps {
+  options: {
+    label: string;
+    value: string;
+  }[];
+  defaultOptionIndex?: number;
+  onClick: (option: string) => void;
 }
 
-const Toggle = ({ defaultOption, onToggle }: ToggleProps) => {
-  const options = ["°C", "°F"];
+const Toggle = ({ options, defaultOptionIndex, onClick }: ToggleProps) => {
+  const defaultOption = defaultOptionIndex
+    ? options[defaultOptionIndex].value
+    : options[0].value;
 
-  const [selectedOption, setSelectedOption] = useState<string>(
-    // TODO: find defaultOption in list of options
-    defaultOption || options[0]
-  );
+  const [selectedOption, setSelectedOption] = useState(defaultOption);
 
-  const handleToggle = (option: string) => {
+  const handleClick = (option: string) => {
     setSelectedOption(option);
-    onToggle(option);
+    onClick(option);
   };
 
   return (
     <div className="toggle-container">
       {options.map((option) => (
         <button
-          key={option}
-          className={`toggle-button ${selectedOption === option && "active"}`}
-          onClick={() => handleToggle(option)}
+          key={option.value}
+          className={`toggle-button ${
+            selectedOption === option.value && "active"
+          }`}
+          onClick={() => handleClick(option.value)}
         >
-          {option}
+          {option.label}
         </button>
       ))}
     </div>

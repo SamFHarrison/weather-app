@@ -1,7 +1,7 @@
 "use client";
 
 import Combobox from "./components/Combobox/Combobox";
-import Toggle from "./components/Toggle/Toggle";
+import Toggle, { ToggleProps } from "./components/Toggle/Toggle";
 import useGetWeather from "./hooks/useGetWeather";
 import useSearchLocation from "./hooks/useLocationSearch";
 import { Location } from "./types/location";
@@ -10,10 +10,15 @@ import "./page.css";
 import Badge from "./components/Badge/Badge";
 
 export default function Home() {
+  const tempScaleOptions = [
+    { label: "°C", value: "celsius" },
+    { label: "°F", value: "fahrenheit" },
+  ];
+
   const [searchedLocation, setSearchedLocation] = useState<Location | null>(
     null
   );
-  const [isCelcius, setIsCelcius] = useState(true);
+  const [tempScale, setTempScale] = useState(tempScaleOptions[0].value);
 
   const {
     weatherData,
@@ -27,9 +32,6 @@ export default function Home() {
     // error: searchError,
     searchLocations,
   } = useSearchLocation();
-
-  console.log(weatherData);
-  console.log(searchResults);
 
   const handleSelectLocation = (location: Location) => {
     setSearchedLocation(location);
@@ -55,8 +57,9 @@ export default function Home() {
           options={searchResults}
         />
         <Toggle
-          onToggle={() => {
-            setIsCelcius(!isCelcius);
+          options={tempScaleOptions}
+          onClick={(selectedOption) => {
+            setTempScale(selectedOption);
           }}
         />
       </div>
@@ -96,7 +99,7 @@ export default function Home() {
 
               <p className="temperature">
                 {`${
-                  isCelcius
+                  tempScale === "celsius"
                     ? Math.round(weatherData?.current.temp_c)
                     : Math.round(weatherData?.current.temp_f)
                 }`}
@@ -112,7 +115,12 @@ export default function Home() {
               <dt>HUMIDITY</dt>
               <dd>{weatherData.current.humidity}%</dd>
               <dt>FEELS LIKE</dt>
-              <dd>{weatherData.current.feelslike_c}&deg;</dd>
+              <dd>
+                {tempScale === "celsius"
+                  ? Math.round(weatherData?.current.feelslike_c)
+                  : Math.round(weatherData?.current.feelslike_f)}
+                &deg;
+              </dd>
               <dt>VISIBILITY</dt>
               <dd>{weatherData.current.vis_miles} miles</dd>
             </dl>
