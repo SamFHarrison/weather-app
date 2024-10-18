@@ -18,11 +18,11 @@
   }
 
   .weather-info {
-    display: flex;
+    display: inherit;
     justify-content: space-between;
 
     .temperature-info {
-      display: flex;
+      display: inherit;
       justify-content: space-between;
       min-width: 350px;
 
@@ -34,7 +34,7 @@
       }
 
       .badge-wrapper {
-        display: flex;
+        display: inherit;
         flex-direction: column;
         justify-content: center;
         gap: 16px;
