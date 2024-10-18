@@ -13,7 +13,7 @@
   margin: 64px;
 
   .location-wrapper {
-    display: flex;
+    display: inherit;
     gap: 16px;
   }
 
