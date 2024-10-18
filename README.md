@@ -14,6 +14,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Design system
   - Create root css variables for spacing.
   - Create utility classes for typography.
+  - Create `.glass-container` utility class.
 - Could implement a library like `clsx` in the `<Toggle />` component.
 - Fix the visual bug on the scroll bar in `<Combobox />`.
 - Create `<Icon />` component.
