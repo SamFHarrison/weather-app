@@ -42,7 +42,7 @@
     }
 
     dl.more-info {
-      display: flex;
+      display: inherit;
       flex-flow: row wrap;
       max-width: 300px;
       align-items: baseline;
