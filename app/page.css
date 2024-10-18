@@ -13,16 +13,16 @@
   margin: 64px;
 
   .location-wrapper {
-    display: inherit;
+    display: flex;
     gap: 16px;
   }
 
   .weather-info {
-    display: inherit;
+    display: flex;
     justify-content: space-between;
 
     .temperature-info {
-      display: inherit;
+      display: flex;
       justify-content: space-between;
       min-width: 350px;
 
@@ -34,7 +34,7 @@
       }
 
       .badge-wrapper {
-        display: inherit;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 16px;
@@ -42,7 +42,7 @@
     }
 
     dl.more-info {
-      display: inherit;
+      display: flex;
       flex-flow: row wrap;
       max-width: 300px;
       align-items: baseline;
@@ -93,6 +93,7 @@
         flex-direction: column-reverse;
         align-items: center;
         gap: 16px;
+
         .badge-wrapper {
           flex-direction: row;
         }
