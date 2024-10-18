@@ -1,7 +1,7 @@
 "use client";
 
 import Combobox from "./components/Combobox/Combobox";
-import Toggle, { ToggleProps } from "./components/Toggle/Toggle";
+import Toggle from "./components/Toggle/Toggle";
 import useGetWeather from "./hooks/useGetWeather";
 import useSearchLocation from "./hooks/useLocationSearch";
 import { Location } from "./types/location";
