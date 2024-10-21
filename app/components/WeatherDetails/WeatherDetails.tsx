@@ -1,3 +1,5 @@
+"use client";
+
 import { Weather } from "@/app/types/weather";
 import React from "react";
 import Badge from "../Badge/Badge";
