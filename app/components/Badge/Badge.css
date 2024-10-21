@@ -17,3 +17,17 @@
 .badge-dd {
   font-weight: 300;
 }
+
+.small {
+  width: 100%;
+  min-width: 40px;
+  height: max-content;
+  padding: 6px 8px 6px 10px;
+  background-color: var(--surface-background-gray-50);
+  border: none;
+
+  .badge-dt,
+  .badge-dd {
+    font-size: 12px;
+  }
+}

@@ -72,6 +72,12 @@
   letter-spacing: 0.4px;
 }
 
+.forecast {
+  display: flex;
+  gap: 16px;
+  margin-top: 64px;
+}
+
 @media (min-width: 425px) and (max-width: 750px) {
   .hero {
     align-items: center;
@@ -82,6 +88,13 @@
   }
   .more-info {
     max-width: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .forecast {
+    flex-direction: column;
+    width: 300px;
   }
 }
 

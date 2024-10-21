@@ -8,6 +8,7 @@ import { Location } from "./types/location";
 import { useState } from "react";
 import "./page.css";
 import Badge from "./components/Badge/Badge";
+import ForecastCard from "./components/ForecastCard/ForecastCard";
 
 export default function Home() {
   const tempScaleOptions = [
@@ -37,6 +38,12 @@ export default function Home() {
     setSearchedLocation(location);
     searchLocations();
   };
+
+  const fiveDayForecast = weatherData
+    ? weatherData?.forecast.forecastday.slice(1)
+    : [];
+
+  console.log(fiveDayForecast);
 
   if (isWeatherLoading) {
     // TODO: create loading spinner
@@ -129,6 +136,14 @@ export default function Home() {
               </dd>
             </dl>
           </section>
+
+          {fiveDayForecast.length > 0 && (
+            <div className="forecast">
+              {fiveDayForecast.map((day, index) => (
+                <ForecastCard weather={day} tempScale={tempScale} />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>

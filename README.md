@@ -20,6 +20,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Create `<Icon />` component.
 - Extract `<DefinitionList />` component.
 - Dynamic favicon.
+- Change Cel/Fahr choice to Metric/Imperial and change all scales (eg. mph/kph etc.)
 
 ## Running the app
 

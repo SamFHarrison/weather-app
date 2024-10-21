@@ -10,9 +10,7 @@ export interface Weather {
     localtime: string;
   };
   current: Current;
-  forecast: {
-    forecastday: Forecastday[];
-  };
+  forecast: Forecast;
 }
 
 export interface Condition {
@@ -51,6 +49,10 @@ export interface Current {
   uv: number;
   gust_mph: number;
   gust_kph: number;
+}
+
+export interface Forecast {
+  forecastday: Forecastday[];
 }
 
 export interface Forecastday {

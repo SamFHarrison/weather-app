@@ -1,0 +1,68 @@
+.forecast-card {
+  background-color: var(--surface-background-blue);
+  border: 1px solid var(--surface-background-white-25);
+  border-radius: 16px;
+  width: 200px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.day {
+  width: 35px;
+  text-align: center;
+}
+
+.icon {
+  width: 32px;
+}
+
+.forecast-temperature {
+  font-size: 64px;
+  letter-spacing: -2px;
+  font-weight: 200;
+  width: 100%;
+  text-align: center;
+}
+
+.temperature-range {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+@media (min-width: 750px) and (max-width: 900px) {
+  .temperature-range {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 750px) {
+  .forecast-card {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .card-header {
+    flex-direction: column;
+    min-width: 60px;
+  }
+
+  .temperature-range {
+    flex-direction: column;
+    min-width: 70px;
+    width: 20%;
+    padding: 0 16px;
+    text-align: end;
+  }
+}
