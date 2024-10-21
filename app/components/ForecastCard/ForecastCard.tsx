@@ -6,11 +6,12 @@ import "./ForecastCard.css";
 interface ForecastCardProps {
   weather: Forecastday;
   tempScale: string;
+  key: number;
 }
 
-const ForecastCard = ({ weather, tempScale }: ForecastCardProps) => {
+const ForecastCard = ({ weather, tempScale, key }: ForecastCardProps) => {
   return (
-    <div className="forecast-card" key={weather.date_epoch}>
+    <div className="forecast-card" key={key}>
       <div className="card-header">
         <p className="day">{dayjs(weather.date).format("ddd")}</p>
         <img

@@ -129,3 +129,15 @@ li {
     transform: rotate(360deg);
   }
 }
+
+.error {
+  margin: 0 64px;
+  padding: 8px 16px;
+  background: rgba(182, 16, 16, 0.5);
+  border: 1px solid var(--surface-background-white-25);
+  border-radius: 8px;
+
+  p {
+    font-weight: 200;
+  }
+}

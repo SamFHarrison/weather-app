@@ -8,7 +8,7 @@ interface BadgeProps {
 
 const Badge = ({ title, value, isSmall }: BadgeProps) => {
   return (
-    <dl className={`badge ${isSmall && "small"}`}>
+    <dl className={`badge${isSmall ? " small" : ""}`}>
       <dt className="badge-dt">{title}</dt>
       <dd className="badge-dd">{value}&deg;</dd>
     </dl>

@@ -9,6 +9,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Extract duplicate types e.g. Error, isLoading etc.
 - Refactor `<ComboBox />` to be more generic and re-usable.
 - Decide and implement an appropriate stale time on `getWeather` cache.
+- Extract `<Callout />` component with an `error` variant.
 - Create a error listener that dynamically displays error notications.
 - Refactor how `searchedLocations` is reset `onSelect`.
 - Design system
@@ -21,6 +22,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Extract `<DefinitionList />` component.
 - Dynamic favicon.
 - Change Cel/Fahr choice to Metric/Imperial and change all scales (eg. mph/kph etc.).
+- Put location parameter in URL so user has browser history of searches.
 
 ## Running the app
 

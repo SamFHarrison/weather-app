@@ -18,7 +18,7 @@
   gap: 16px;
 }
 
-.weather-info {
+.current-weather {
   display: flex;
   justify-content: space-between;
   gap: 32px;
@@ -82,7 +82,7 @@
   .hero {
     align-items: center;
   }
-  .weather-info {
+  .current-weather {
     flex-direction: column;
     width: min-content;
   }
@@ -113,7 +113,7 @@
     margin: 16px;
   }
 
-  .weather-info {
+  .current-weather {
     flex-direction: column;
     gap: 32px;
     align-items: center;

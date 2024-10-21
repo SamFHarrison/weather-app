@@ -58,11 +58,14 @@
     min-width: 60px;
   }
 
+  .forecast-temperature {
+    text-align: end;
+  }
+
   .temperature-range {
     flex-direction: column;
-    min-width: 70px;
+    min-width: 80px;
     width: 20%;
     padding: 0 16px;
-    text-align: end;
   }
 }
