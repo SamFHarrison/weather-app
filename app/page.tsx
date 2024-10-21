@@ -20,7 +20,8 @@ export default function Home() {
   const {
     weatherData,
     isLoading: isWeatherLoading,
-    error: weatherError,
+    weatherError,
+    locationError,
   } = useGetWeather(searchedLocation);
 
   const {
@@ -39,18 +40,6 @@ export default function Home() {
     ? weatherData?.forecast.forecastday.slice(1)
     : [];
 
-  console.log(fiveDayForecast);
-
-  // if (isWeatherLoading) {
-  //   // TODO: create loading spinner
-  //   return <p>isWeatherLoading</p>;
-  // }
-
-  // if (weatherError) {
-  //   // TODO: Create component to display errors
-  //   return <p>weatherError: {weatherError}</p>;
-  // }
-
   return (
     <div className="page">
       <header className="header">
@@ -68,9 +57,9 @@ export default function Home() {
         />
       </header>
 
-      {weatherError && (
+      {locationError && (
         <div role="alert" className="error">
-          Something went wrong, please try again later.
+          {locationError}
         </div>
       )}
 

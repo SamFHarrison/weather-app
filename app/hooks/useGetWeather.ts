@@ -7,15 +7,16 @@ import useUserLocation from "./useUserLocation";
 interface UseWeatherReturn {
   weatherData: Weather | null;
   isLoading: boolean;
-  error: string | null;
+  weatherError: string | null;
+  locationError: string | null;
 }
 
 const useGetWeather = (searchedLocation: Location | null): UseWeatherReturn => {
   const [weatherData, setWeatherData] = useState<Weather | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [weatherError, setWeatherError] = useState<string | null>(null);
 
-  const { userLocation } = useUserLocation();
+  const { userLocation, locationError } = useUserLocation();
 
   const latitude = searchedLocation
     ? searchedLocation.lat
@@ -33,13 +34,13 @@ const useGetWeather = (searchedLocation: Location | null): UseWeatherReturn => {
           setIsLoading(false);
         })
         .catch((error) => {
-          setError(error.message);
+          setWeatherError(error.message);
           setIsLoading(false);
         });
     }
   }, [latitude, longitude]);
 
-  return { weatherData, isLoading, error };
+  return { weatherData, isLoading, weatherError, locationError };
 };
 
 export default useGetWeather;
