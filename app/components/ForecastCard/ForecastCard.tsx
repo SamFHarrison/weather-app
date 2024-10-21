@@ -32,22 +32,24 @@ const ForecastCard = ({ weather, tempScale, key }: ForecastCardProps) => {
 
       <div className="temperature-range">
         <Badge
+          title="H"
+          ariaLabel="High"
           isSmall
           value={
             tempScale === "celsius"
               ? Math.round(weather.day.maxtemp_c)
               : Math.round(weather.day.maxtemp_f)
           }
-          title="H"
         />
         <Badge
+          title="L"
+          ariaLabel="Low"
           isSmall
           value={
             tempScale === "celsius"
               ? Math.round(weather.day.mintemp_c)
               : Math.round(weather.day.mintemp_f)
           }
-          title="L"
         />
       </div>
     </div>
