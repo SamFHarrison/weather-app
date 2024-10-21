@@ -6,70 +6,17 @@
   gap: 8px;
 }
 
+.search-bar-wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
   gap: 32px;
   margin: 64px;
-}
-
-.location-wrapper {
-  display: flex;
-  gap: 16px;
-}
-
-.current-weather {
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
-}
-
-.temperature-info {
-  display: flex;
-  justify-content: space-between;
-  width: 350px;
-  min-width: 350px;
-}
-
-.temperature {
-  font-size: 128px;
-  font-weight: 500;
-  letter-spacing: -6px;
-  line-height: 100%;
-}
-
-.badge-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-}
-
-.more-info {
-  display: flex;
-  flex-flow: row wrap;
-  max-width: 300px;
-  align-items: baseline;
-}
-
-.more-info-dt {
-  flex-basis: 70%;
-  padding: 2px 4px;
-  text-align: left;
-  font-size: 14px;
-  font-weight: 200;
-  letter-spacing: 0.7px;
-}
-
-.more-info-dd {
-  flex-basis: 20%;
-  flex-grow: 1;
-  margin: 0;
-  text-align: right;
-  padding: 2px 4px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
 }
 
 .forecast {
@@ -81,13 +28,6 @@
 @media (min-width: 425px) and (max-width: 750px) {
   .hero {
     align-items: center;
-  }
-  .current-weather {
-    flex-direction: column;
-    width: min-content;
-  }
-  .more-info {
-    max-width: none;
   }
 }
 
@@ -107,26 +47,5 @@
   .hero {
     margin: 16px;
     align-items: center;
-  }
-
-  .location-wrapper {
-    margin: 16px;
-  }
-
-  .current-weather {
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-  }
-
-  .temperature-info {
-    min-width: 0px;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .badge-wrapper {
-    flex-direction: row;
   }
 }

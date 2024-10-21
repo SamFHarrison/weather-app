@@ -5,6 +5,8 @@ export async function getWeather(latitude: number, longitude: number) {
     days: "6",
   });
 
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
   const response = await fetch(
     `${
       process.env.NEXT_PUBLIC_WEATHER_BASE_API_URL

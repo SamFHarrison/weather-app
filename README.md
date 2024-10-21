@@ -23,6 +23,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Dynamic favicon.
 - Change Cel/Fahr choice to Metric/Imperial and change all scales (eg. mph/kph etc.).
 - Put location parameter in URL so user has browser history of searches.
+- Use `Promise.all()` in `getWeather` so artificial promise delay is 800ms minimum rather than delay + the real call.
 
 ## Running the app
 

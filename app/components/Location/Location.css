@@ -1,0 +1,10 @@
+.location-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 425px) {
+  .location-wrapper {
+    margin: 16px;
+  }
+}

@@ -3,6 +3,7 @@
 import { Weather } from "@/app/types/weather";
 import React from "react";
 import Badge from "../Badge/Badge";
+import "./WeatherDetails.css";
 
 interface WeatherDetailsProps {
   weather: Weather;
