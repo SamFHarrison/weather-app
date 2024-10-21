@@ -5,9 +5,15 @@ export interface ComboboxProps {
   options: Location[];
   onChange: (query: string) => void;
   onSelect: (location: Location) => void;
+  isLoading: boolean;
 }
 
-const Combobox = ({ options, onChange, onSelect }: ComboboxProps) => {
+const Combobox = ({
+  options,
+  onChange,
+  onSelect,
+  isLoading,
+}: ComboboxProps) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -42,27 +48,30 @@ const Combobox = ({ options, onChange, onSelect }: ComboboxProps) => {
           className="input"
           aria-label="Search locations"
         />
+        {isLoading && <span className="spinner" />}
       </div>
 
       {isExpanded && (
-        <ul className="dropdown-list" id="dropdown-list">
-          {options.map((result) => (
-            <li className="list-item" key={result.id}>
-              <button
-                title={`${result.name}, ${result.region}, ${result.country}`}
-                aria-label={`${result.name}, ${result.region}, ${result.country}`}
-                onClick={() => {
-                  onSelect(result);
-                }}
-              >
-                <span>
-                  {result.name}, {result.region}
-                </span>
-                <span className="country">{result.country}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="dropdown-list" id="dropdown-list">
+            {options.map((result) => (
+              <li className="list-item" key={result.id}>
+                <button
+                  title={`${result.name}, ${result.region}, ${result.country}`}
+                  aria-label={`${result.name}, ${result.region}, ${result.country}`}
+                  onClick={() => {
+                    onSelect(result);
+                  }}
+                >
+                  <span>
+                    {result.name}, {result.region}
+                  </span>
+                  <span className="country">{result.country}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </div>
   );

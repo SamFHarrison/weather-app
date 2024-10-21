@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9NDUkNZAboKocYO/My-Brain-In-The-Form-Of-A-Figma-File?node-id=633-1066).
 
-## Improvements I'd like to make
+## To-Do list
 
 - Extract duplicate types e.g. Error, isLoading etc.
 - Refactor `<ComboBox />` to be more generic and re-usable.
@@ -20,7 +20,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Create `<Icon />` component.
 - Extract `<DefinitionList />` component.
 - Dynamic favicon.
-- Change Cel/Fahr choice to Metric/Imperial and change all scales (eg. mph/kph etc.)
+- Change Cel/Fahr choice to Metric/Imperial and change all scales (eg. mph/kph etc.).
 
 ## Running the app
 
@@ -37,6 +37,14 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+For the [Weather API](https://www.weatherapi.com/) to work in your local development environment, sign up to the platform to get an API key. Create a `.env.local` file at the top most level of the workspace and add the following variables:
+
+```
+NEXT_PUBLIC_WEATHER_BASE_API_URL=https://api.weatherapi.com/v1
+
+NEXT_PUBLIC_WEATHER_API_KEY=<YOUR_API_KEY_HERE>
+```
 
 ## Learn More
 

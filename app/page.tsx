@@ -9,13 +9,9 @@ import { useState } from "react";
 import "./page.css";
 import Badge from "./components/Badge/Badge";
 import ForecastCard from "./components/ForecastCard/ForecastCard";
+import { tempScaleOptions } from "./constants/constants";
 
 export default function Home() {
-  const tempScaleOptions = [
-    { label: "°C", value: "celsius" },
-    { label: "°F", value: "fahrenheit" },
-  ];
-
   const [searchedLocation, setSearchedLocation] = useState<Location | null>(
     null
   );
@@ -29,7 +25,7 @@ export default function Home() {
 
   const {
     searchResults,
-    // isLoading: searchLoading,
+    isLoading: isSearchLoading,
     // error: searchError,
     searchLocations,
   } = useSearchLocation();
@@ -45,15 +41,15 @@ export default function Home() {
 
   console.log(fiveDayForecast);
 
-  if (isWeatherLoading) {
-    // TODO: create loading spinner
-    return <p>isWeatherLoading</p>;
-  }
+  // if (isWeatherLoading) {
+  //   // TODO: create loading spinner
+  //   return <p>isWeatherLoading</p>;
+  // }
 
-  if (weatherError) {
-    // TODO: Create component to display errors
-    return <p>weatherError: {weatherError}</p>;
-  }
+  // if (weatherError) {
+  //   // TODO: Create component to display errors
+  //   return <p>weatherError: {weatherError}</p>;
+  // }
 
   return (
     <div className="page">
@@ -62,6 +58,7 @@ export default function Home() {
           onChange={searchLocations}
           onSelect={handleSelectLocation}
           options={searchResults}
+          isLoading={isSearchLoading}
         />
         <Toggle
           options={tempScaleOptions}
@@ -70,6 +67,12 @@ export default function Home() {
           }}
         />
       </header>
+
+      {weatherError && (
+        <div role="alert" className="error">
+          Something went wrong, please try again later.
+        </div>
+      )}
 
       {weatherData && (
         <div className="hero">
@@ -139,7 +142,7 @@ export default function Home() {
 
           {fiveDayForecast.length > 0 && (
             <div className="forecast">
-              {fiveDayForecast.map((day, index) => (
+              {fiveDayForecast.map((day) => (
                 <ForecastCard weather={day} tempScale={tempScale} />
               ))}
             </div>
