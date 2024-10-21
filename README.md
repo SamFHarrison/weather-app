@@ -29,6 +29,7 @@ I've quickly prioritised these actions into:
 - [ ] Create root CSS variables for spacing.
 - [ ] Extract `<DefinitionList />` component.
 - [ ] Use `Promise.all()` in `getWeather` so artificial promise delay is 800ms minimum rather than delay + the real call.
+- [ ] Fix slow loading background image. Maybe try rendering on the server using `getServerSideProps()`? Or lazy loading?
 
 ### Nice To Have
 
