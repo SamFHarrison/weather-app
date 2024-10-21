@@ -3,10 +3,10 @@ import React from "react";
 import "./Location.css";
 
 interface LocationProps {
-  weatherData: Weather;
+  weather: Weather;
 }
 
-function Location({ weatherData }: LocationProps) {
+function Location({ weather }: LocationProps) {
   return (
     <div className="location-wrapper">
       <svg width="25" height="25" viewBox="0 0 25 25">
@@ -16,7 +16,7 @@ function Location({ weatherData }: LocationProps) {
         />
       </svg>
 
-      <p className="location">{`${weatherData.location.name}, ${weatherData.location.country}`}</p>
+      <p className="location">{`${weather.location.name}, ${weather.location.country}`}</p>
     </div>
   );
 }

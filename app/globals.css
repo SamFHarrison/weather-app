@@ -6,7 +6,7 @@
   --surface-background-white-50: rgba(255, 255, 255, 0.5);
   --surface-background-white-25: rgba(255, 255, 255, 0.25);
   --surface-background-blue: rgb(8, 57, 119);
-
+  --surface-background-error: rgba(182, 16, 16, 0.5);
   --surface-border-focus: rgb(197, 176, 16);
 }
 
@@ -133,7 +133,7 @@ li {
 .error {
   margin: 0 64px;
   padding: 8px 16px;
-  background: rgba(182, 16, 16, 0.5);
+  background: var(--surface-background-error);
   border: 1px solid var(--surface-background-white-25);
   border-radius: 8px;
 

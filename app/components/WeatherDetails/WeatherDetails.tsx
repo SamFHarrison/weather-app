@@ -17,12 +17,22 @@ function WeatherDetails({ weather, tempScale }: WeatherDetailsProps) {
         <div className="badge-wrapper">
           <Badge
             title="H"
-            value={Math.round(weather?.forecast.forecastday[0].day.maxtemp_c)}
+            ariaLabel="High"
+            value={
+              tempScale === "celsius"
+                ? Math.round(weather?.forecast.forecastday[0].day.maxtemp_c)
+                : Math.round(weather?.forecast.forecastday[0].day.maxtemp_f)
+            }
           />
 
           <Badge
             title="L"
-            value={Math.round(weather?.forecast.forecastday[0].day.mintemp_c)}
+            ariaLabel="Low"
+            value={
+              tempScale === "celsius"
+                ? Math.round(weather?.forecast.forecastday[0].day.mintemp_c)
+                : Math.round(weather?.forecast.forecastday[0].day.mintemp_f)
+            }
           />
         </div>
 
@@ -37,20 +47,20 @@ function WeatherDetails({ weather, tempScale }: WeatherDetailsProps) {
       </div>
 
       <dl className="more-info">
-        <dt className="more-info-dt">WIND SPEED</dt>
+        <dt className="more-info-dt">Wind speed</dt>
         <dd className="more-info-dd">{weather.current.wind_mph}mph</dd>
-        <dt className="more-info-dt">WIND DIRECTION</dt>
+        <dt className="more-info-dt">Wind direction</dt>
         <dd className="more-info-dd">{weather.current.wind_dir}</dd>
-        <dt className="more-info-dt">HUMIDITY</dt>
+        <dt className="more-info-dt">Humidity</dt>
         <dd className="more-info-dd">{weather.current.humidity}%</dd>
-        <dt className="more-info-dt">FEELS LIKE</dt>
+        <dt className="more-info-dt">Feels like</dt>
         <dd className="more-info-dd">
           {tempScale === "celsius"
             ? Math.round(weather?.current.feelslike_c)
             : Math.round(weather?.current.feelslike_f)}
           &deg;
         </dd>
-        <dt className="more-info-dt">VISIBILITY</dt>
+        <dt className="more-info-dt">Visibility</dt>
         <dd className="more-info-dd">{weather.current.vis_miles} miles</dd>
       </dl>
     </section>

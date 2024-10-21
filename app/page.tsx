@@ -19,9 +19,9 @@ export default function Home() {
   const [tempScale, setTempScale] = useState(tempScaleOptions[0].value);
 
   const {
-    weatherData,
+    weather,
     isLoading: isWeatherLoading,
-    weatherError,
+    error: weatherError,
     locationError,
   } = useGetWeather(searchedLocation);
 
@@ -37,9 +37,7 @@ export default function Home() {
     searchLocations();
   };
 
-  const fiveDayForecast = weatherData
-    ? weatherData?.forecast.forecastday.slice(1)
-    : [];
+  const forecasts = weather ? weather.forecast.forecastday.slice(1) : [];
 
   return (
     <>
@@ -71,15 +69,15 @@ export default function Home() {
         </div>
       )}
 
-      {weatherData && (
+      {weather && (
         <main className="hero">
-          <Location weatherData={weatherData} />
+          <Location weather={weather} />
 
-          <WeatherDetails tempScale={tempScale} weather={weatherData} />
+          <WeatherDetails tempScale={tempScale} weather={weather} />
 
-          {fiveDayForecast.length > 0 && (
+          {forecasts.length > 0 && (
             <div className="forecast">
-              {fiveDayForecast.map((day, index) => (
+              {forecasts.map((day, index) => (
                 <ForecastCard weather={day} tempScale={tempScale} key={index} />
               ))}
             </div>

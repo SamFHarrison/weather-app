@@ -13,7 +13,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Create a error listener that dynamically displays error notications.
 - Refactor how `searchedLocations` is reset `onSelect`.
 - Design system
-  - Create root css variables for spacing.
+  - Create root CSS variables for spacing.
   - Create utility classes for typography.
   - Create `.glass-container` utility class.
 - Could implement a library like `clsx` in the `<Toggle />` component.
@@ -27,6 +27,7 @@ My wireframe designs can be found [here](https://www.figma.com/design/yvqEr8D9ND
 - Focus outline on search bar.
 - Clicking on search icon should focus on search input.
 - Weather icons are slightly pixalated.
+- Replace `dayjs` with `date-fns`.
 
 ## Running the app
 

@@ -5,18 +5,22 @@ import { getWeather } from "../services/weather/getWeather";
 import useUserLocation from "./useUserLocation";
 
 interface UseWeatherReturn {
-  weatherData: Weather | null;
+  weather: Weather | null;
   isLoading: boolean;
-  weatherError: string | null;
+  error: string | null;
   locationError: string | null;
 }
 
 const useGetWeather = (searchedLocation: Location | null): UseWeatherReturn => {
-  const [weatherData, setWeatherData] = useState<Weather | null>(null);
+  const [weather, setWeatherData] = useState<Weather | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [weatherError, setWeatherError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const { userLocation, locationError } = useUserLocation();
+  const {
+    userLocation,
+    error: locationError,
+    setError: setLocationError,
+  } = useUserLocation();
 
   const latitude = searchedLocation
     ? searchedLocation.lat
@@ -27,6 +31,7 @@ const useGetWeather = (searchedLocation: Location | null): UseWeatherReturn => {
 
   useEffect(() => {
     if (latitude && longitude) {
+      setLocationError(null);
       setIsLoading(true);
       getWeather(latitude, longitude)
         .then((data) => {
@@ -34,13 +39,13 @@ const useGetWeather = (searchedLocation: Location | null): UseWeatherReturn => {
           setIsLoading(false);
         })
         .catch((error) => {
-          setWeatherError(error.message);
+          setError(error.message);
           setIsLoading(false);
         });
     }
   }, [latitude, longitude]);
 
-  return { weatherData, isLoading, weatherError, locationError };
+  return { weather, isLoading, error, locationError };
 };
 
 export default useGetWeather;
