@@ -65,6 +65,8 @@ export default function Home() {
         </div>
       )}
 
+      {isWeatherLoading && <span className="spinner" />}
+
       {weatherData && (
         <main className="hero">
           <div className="location-wrapper">
