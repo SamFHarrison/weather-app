@@ -17,12 +17,12 @@ function WeatherDetails({ weather, tempScale }: WeatherDetailsProps) {
         <div className="badge-wrapper">
           <Badge
             title="H"
-            value={weather?.forecast.forecastday[0].day.maxtemp_c}
+            value={Math.round(weather?.forecast.forecastday[0].day.maxtemp_c)}
           />
 
           <Badge
             title="L"
-            value={weather?.forecast.forecastday[0].day.mintemp_c}
+            value={Math.round(weather?.forecast.forecastday[0].day.mintemp_c)}
           />
         </div>
 
