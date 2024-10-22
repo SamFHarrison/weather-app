@@ -6,6 +6,18 @@
   gap: 8px;
 }
 
+h1 {
+  /* Making h1 screen reader only */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .search-bar-wrapper {
   display: flex;
   gap: 16px;
