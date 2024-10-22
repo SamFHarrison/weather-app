@@ -14,7 +14,18 @@ I've quickly prioritised these actions into:
 
 ### Major
 
-- [ ] Test all components
+- [ ] Test all components and hooks
+  - Components
+    - [x] Combobox
+    - [x] Badge
+    - [x] Forecast Card
+    - [ ] Location
+    - [x] Toggle
+    - [ ] Weather Details
+  - Hooks
+    - [ ] useGetWeather
+    - [ ] useUserLocation
+    - [ ] useLocationSearch
 - [ ] Refactor how `searchedLocations` is reset `onSelect` and `onBlur`.
 - [ ] Fix the visual bug on the scroll bar in `<Combobox />`.
 - [ ] Focus outline on search bar.
