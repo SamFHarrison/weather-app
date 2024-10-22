@@ -30,6 +30,7 @@ I've quickly prioritised these actions into:
 - [ ] Fix the visual bug on the scroll bar in `<Combobox />`.
 - [ ] Focus outline on search bar.
 - [ ] Clicking on search icon should focus on search input.
+- [ ] In `<Combobox />` options navigable with arrow keys.
 
 ### Minor
 
