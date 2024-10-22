@@ -55,6 +55,7 @@ I've quickly prioritised these actions into:
 - [ ] Change Cel/Fahr choice to Metric/Imperial and change all scales (eg. mph/kph etc.).
 - [ ] Weather icons are slightly pixalated.
 - [ ] Replace `dayjs` with `date-fns`.
+- [ ] Configure desired ESLint rules.
 
 ## Running the app
 
