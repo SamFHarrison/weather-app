@@ -4,8 +4,6 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 My UI designs can be found [here](https://www.figma.com/design/yvqEr8D9NDUkNZAboKocYO/My-Brain-In-The-Form-Of-A-Figma-File?node-id=633-1066) on Figma.
 
-<iframe align="center" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/yvqEr8D9NDUkNZAboKocYO/My-Brain-In-The-Form-Of-A-Figma-File?node-id=633-1066&embed-host=share" allowfullscreen></iframe>
-
 ## To-Do list
 
 I've quickly prioritised these actions into:
