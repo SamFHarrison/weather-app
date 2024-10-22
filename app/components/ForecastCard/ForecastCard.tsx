@@ -3,10 +3,10 @@ import Badge from "../Badge/Badge";
 import dayjs from "dayjs";
 import "./ForecastCard.css";
 
-interface ForecastCardProps {
+export interface ForecastCardProps {
   weather: Forecastday;
   tempScale: string;
-  key: number;
+  key?: number;
 }
 
 const ForecastCard = ({ weather, tempScale, key }: ForecastCardProps) => {

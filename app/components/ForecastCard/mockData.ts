@@ -1,0 +1,43 @@
+import { Forecastday } from "@/app/types/weather";
+
+export const mockForecastday: Forecastday = {
+  date: "2024-10-22",
+  date_epoch: 1729555200,
+  day: {
+    maxtemp_c: 10.9,
+    maxtemp_f: 51.7,
+    mintemp_c: 8.7,
+    mintemp_f: 47.7,
+    avgtemp_c: 9.7,
+    avgtemp_f: 49.5,
+    maxwind_mph: 21.7,
+    maxwind_kph: 34.9,
+    totalprecip_mm: 0.43,
+    totalprecip_in: 0.02,
+    totalsnow_cm: 0,
+    avgvis_km: 10,
+    avgvis_miles: 6,
+    avghumidity: 71,
+    daily_will_it_rain: 1,
+    daily_chance_of_rain: 79,
+    daily_will_it_snow: 0,
+    daily_chance_of_snow: 0,
+    condition: {
+      text: "Patchy rain nearby",
+      icon: "//cdn.weatherapi.com/weather/64x64/day/176.png",
+      code: 1063,
+    },
+    uv: 0.2,
+  },
+  astro: {
+    sunrise: "08:04 AM",
+    sunset: "05:50 PM",
+    moonrise: "08:09 PM",
+    moonset: "03:40 PM",
+    moon_phase: "Waning Gibbous",
+    moon_illumination: 74,
+    is_moon_up: 1,
+    is_sun_up: 0,
+  },
+  hour: [],
+};
