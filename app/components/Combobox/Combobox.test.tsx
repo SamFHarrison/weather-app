@@ -11,7 +11,7 @@ const defaultProps: ComboboxProps = {
   isLoading: false,
 };
 
-describe("Combobox", () => {
+describe("<Combobox />", () => {
   it("should render input field with placeholder", () => {
     render(<Combobox {...defaultProps} />);
 
@@ -22,8 +22,8 @@ describe("Combobox", () => {
     const onChange = vi.fn();
     render(<Combobox {...defaultProps} onChange={onChange} />);
 
-    const inputElement = screen.getByPlaceholderText("Search...");
-    fireEvent.change(inputElement, { target: { value: "New" } });
+    const input = screen.getByPlaceholderText("Search...");
+    fireEvent.change(input, { target: { value: "New" } });
 
     expect(onChange).toHaveBeenCalledWith("New");
   });
@@ -54,10 +54,10 @@ describe("Combobox", () => {
       />
     );
 
-    const optionButton = screen.getByTitle(
+    const options = screen.getByTitle(
       "Elgin, Illinois, United States of America"
     );
-    fireEvent.click(optionButton);
+    fireEvent.click(options);
 
     expect(onSelect).toHaveBeenCalledWith(mockLocationOptions[0]);
   });

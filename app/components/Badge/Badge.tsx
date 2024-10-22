@@ -1,6 +1,6 @@
 import "./Badge.css";
 
-interface BadgeProps {
+export interface BadgeProps {
   title: string;
   value: number;
   ariaLabel: string;
@@ -9,8 +9,12 @@ interface BadgeProps {
 
 const Badge = ({ title, value, ariaLabel, isSmall }: BadgeProps) => {
   return (
-    <dl className={`badge${isSmall ? " small" : ""}`}>
-      <dt className="badge-dt" aria-label={ariaLabel}>
+    <dl
+      className={`badge${isSmall ? " small" : ""}`}
+      aria-label={ariaLabel}
+      role="list"
+    >
+      <dt className="badge-dt" aria-describedby={ariaLabel}>
         {title}
       </dt>
       <dd className="badge-dd">{value}&deg;</dd>

@@ -9,7 +9,7 @@ import { mockWeather } from "./mocks/weather";
 vi.mock("./hooks/useLocationSearch");
 vi.mock("./hooks/useGetWeather");
 
-describe("Home page", () => {
+describe("<Home />", () => {
   it("should render search bar and toggle", () => {
     (useSearchLocation as Mock).mockReturnValue({
       searchResults: [],
