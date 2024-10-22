@@ -42,6 +42,8 @@ export default function Home() {
   return (
     <>
       <header className="header">
+        <h1 className="page-title">Weather Forecast</h1>
+
         <div className="search-bar-wrapper">
           <Combobox
             onChange={searchLocations}
@@ -50,7 +52,7 @@ export default function Home() {
             isLoading={isSearchLoading}
           />
 
-          {isWeatherLoading && <span className="spinner" />}
+          {isWeatherLoading && <span className="spinner" role="status" />}
         </div>
 
         <Toggle
