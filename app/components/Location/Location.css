@@ -1,10 +1,10 @@
 .location-wrapper {
   display: flex;
-  gap: 16px;
+  gap: var(--space-06);
 }
 
 @media (max-width: 425px) {
   .location-wrapper {
-    margin: 16px;
+    margin: var(--space-06);
   }
 }

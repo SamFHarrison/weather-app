@@ -1,7 +1,7 @@
 .current-weather {
   display: flex;
   justify-content: space-between;
-  gap: 32px;
+  gap: var(--space-09);
 }
 
 .temperature-info {
@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: var(--space-06);
 }
 
 .temperature {
@@ -34,7 +34,7 @@
 
 .more-info-dt {
   flex-basis: 70%;
-  padding: 2px 4px;
+  padding: var(--space-01) var(--space-02);
   text-align: left;
   font-size: 14px;
   font-weight: 200;
@@ -47,7 +47,7 @@
   flex-grow: 1;
   margin: 0;
   text-align: right;
-  padding: 2px 4px;
+  padding: var(--space-01) var(--space-02);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.4px;
@@ -67,7 +67,7 @@
 @media (max-width: 425px) {
   .current-weather {
     flex-direction: column;
-    gap: 32px;
+    gap: var(--space-09);
     align-items: center;
   }
 
@@ -75,7 +75,7 @@
     min-width: 0px;
     flex-direction: column-reverse;
     align-items: center;
-    gap: 16px;
+    gap: var(--space-06);
   }
 
   .badge-wrapper {

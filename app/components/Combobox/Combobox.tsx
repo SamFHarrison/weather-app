@@ -22,7 +22,7 @@ const Combobox = ({
 
   return (
     <div
-      className="combobox"
+      className="combobox glass"
       role="combobox"
       aria-expanded={isExpanded}
       aria-controls="dropdown-list"
@@ -47,7 +47,7 @@ const Combobox = ({
 
       {isExpanded && (
         <>
-          <ul className="dropdown-list" id="dropdown-list">
+          <ul className="dropdown-list glass" id="dropdown-list">
             {options.map((result) => (
               <li className="list-item" key={result.id}>
                 <button

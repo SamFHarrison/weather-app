@@ -2,11 +2,9 @@
   display: flex;
   width: 100px;
   height: 40px;
-  background-color: var(--surface-background-blue);
-  border: 1px solid var(--surface-background-white-25);
   justify-content: space-between;
   align-items: center;
-  padding: 8px 8px 8px 12px;
+  padding: var(--space-04) var(--space-04) var(--space-04) var(--space-05);
   border-radius: 18px;
 }
 
@@ -20,9 +18,9 @@
 
 .small {
   width: 100%;
-  min-width: 40px;
+  min-width: 60px;
   height: max-content;
-  padding: 6px 8px 6px 10px;
+  padding: var(--space-03) var(--space-05);
   background-color: var(--surface-background-gray-50);
   border: none;
 

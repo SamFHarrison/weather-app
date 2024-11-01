@@ -23,12 +23,12 @@ const Toggle = ({ options, defaultOptionIndex, onClick }: ToggleProps) => {
   };
 
   return (
-    <div className="toggle-container">
+    <div className="toggle-container glass">
       {options.map((option) => (
         <button
           key={option.value}
           className={`toggle-button ${
-            selectedOption === option.value && "active"
+            selectedOption === option.value ? "active" : ""
           }`}
           onClick={() => handleClick(option.value)}
         >

@@ -10,7 +10,7 @@ export interface BadgeProps {
 const Badge = ({ title, value, ariaLabel, isSmall }: BadgeProps) => {
   return (
     <dl
-      className={`badge${isSmall ? " small" : ""}`}
+      className={`badge glass${isSmall ? " small" : ""}`}
       aria-label={ariaLabel}
       role="list"
     >

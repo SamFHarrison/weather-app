@@ -11,7 +11,7 @@ export interface ForecastCardProps {
 
 const ForecastCard = ({ weather, tempScale, key }: ForecastCardProps) => {
   return (
-    <div className="forecast-card" key={key}>
+    <div className="forecast-card glass" key={key}>
       <div className="card-header">
         <p className="day">{dayjs(weather.date).format("ddd")}</p>
         <img

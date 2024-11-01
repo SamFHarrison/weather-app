@@ -1,26 +1,22 @@
 .toggle-container {
   display: flex;
-  background-color: var(--surface-background-blue);
-  border: 1px solid var(--surface-background-white-25);
   border-radius: 26px;
-  padding: 4px;
-  height: 52px;
+  padding: var(--space-02);
+  height: 50px;
   width: max-content;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 .toggle-button {
   background-color: transparent;
   border: none;
   border-radius: 22px;
-  width: 64px;
+  width: var(--space-12);
 }
 .toggle-button:hover {
   background-color: var(--surface-background-blue);
 }
 .toggle-button.active {
-  background-color: var(--surface-background-gray-50);
+  background-color: var(--surface-background-white-25);
 }
 
 @media (max-width: 425px) {

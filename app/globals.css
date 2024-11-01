@@ -1,6 +1,21 @@
 :root {
-  --font-primary: #ffffff;
-  --font-placeholder: rgba(255, 255, 255, 0.5);
+  --colour-text: #ffffff;
+  --colour-text-placeholder: rgba(255, 255, 255, 0.5);
+
+  --space-00: 0px;
+  --space-01: 2px;
+  --space-02: 4px;
+  --space-03: 6px;
+  --space-04: 8px;
+  --space-05: 12px;
+  --space-06: 16px;
+  --space-07: 20px;
+  --space-08: 24px;
+  --space-09: 32px;
+  --space-10: 40px;
+  --space-11: 48px;
+  --space-12: 64px;
+  --space-13: 80px;
 
   --surface-background-gray-50: rgba(34, 34, 34, 0.5);
   --surface-background-white-50: rgba(255, 255, 255, 0.5);
@@ -17,7 +32,7 @@ body {
 }
 
 body {
-  color: var(--font-primary);
+  color: var(--colour-text);
 
   height: 100dvh;
   max-width: 1000px;
@@ -44,7 +59,7 @@ body {
 }
 
 *:focus {
-  outline: 2px solid var(--surface-border-focus);
+  outline: var(--space-01) solid var(--surface-border-focus);
   outline-offset: -2px;
 }
 
@@ -63,7 +78,7 @@ button {
 }
 
 input::placeholder {
-  color: var(--font-placeholder);
+  color: var(--colour-text-placeholder);
   font-weight: 300;
 }
 
@@ -72,7 +87,7 @@ li {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: var(--space-02);
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -113,6 +128,12 @@ li {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
 }
 
+.glass {
+  backdrop-filter: blur(8px);
+  --webkit-backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
 .spinner {
   display: inline-block;
   width: 16px;
@@ -121,7 +142,6 @@ li {
   border-top-color: currentColor;
   border-radius: 100%;
   animation: spin 0.75s linear infinite;
-  margin-right: var(--spacing-sm);
 }
 
 @keyframes spin {
@@ -131,8 +151,8 @@ li {
 }
 
 .error {
-  margin: 0 64px;
-  padding: 8px 16px;
+  margin: var(--space-00) var(--space-12);
+  padding: var(--space-02) var(--space-06);
   background: var(--surface-background-error);
   border: 1px solid var(--surface-background-white-25);
   border-radius: 8px;
